@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ARTÈL24H - Central Comercial Multicanal Inteligente" />
+  <title>ARTÈL24H | Central Comercial</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">A</span><div><strong>ARTÈL24H</strong><small>COMMERCE OS</small></div></div>
+    <nav>
+      <button class="nav-item active" data-view="overview">◈ Visão geral</button>
+      <button class="nav-item" data-view="channels">⊞ Central de canais</button>
+      <button class="nav-item" data-view="catalog">▦ Catálogo central</button>
+      <button class="nav-item" data-view="operations">◴ Centro de operações</button>
+      <button class="nav-item" data-view="approvals">✓ Aprovações</button>
+    </nav>
+    <div class="sidebar-foot"><span class="pulse"></span> Núcleo operacional<br><small>Modo seguro · sem conexões externas</small></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><span class="eyebrow">CÉREBRO ARTÈL24H / HUB MULTICANAL</span><h1 id="page-title">Visão geral</h1></div><div class="top-actions"><span class="api-state"><i></i> API ONLINE</span><button class="ghost" id="refresh">Atualizar</button></div></header>
+    <div id="notice" class="notice" hidden></div>
+    <section id="view-overview" class="view">
+      <div class="hero"><div><p class="eyebrow">INFRAESTRUTURA COMERCIAL</p><h2>Um cérebro.<br /><em>Vários canais.</em></h2><p class="muted">Orquestre catálogo, conectores e operações sem transformar nenhum marketplace em dependência central.</p></div><div class="hero-orbit"><span>ARTÈL24H</span><b>HUB</b><i>+</i></div></div>
+      <div class="stats" id="stats"></div>
+      <div class="section-head"><div><p class="eyebrow">CANAIS CONFIGURADOS</p><h3>Central de canais</h3></div><button class="primary" data-view-target="channels">Ver todos os canais →</button></div>
+      <div class="channel-grid" id="overview-channels"></div>
+    </section>
+    <section id="view-channels" class="view" hidden><div class="section-head"><div><p class="eyebrow">HUB MULTICANAL DE COMÉRCIO</p><h3>Todos os canais</h3><p class="muted">Conecte sob demanda. Nenhum status é confirmado sem validação real.</p></div><button class="primary" id="add-channel">＋ Adicionar canal</button></div><div class="channel-grid" id="channels-list"></div></section>
+    <section id="view-catalog" class="view" hidden><div class="section-head"><div><p class="eyebrow">FONTE CENTRAL DE VERDADE</p><h3>Catálogo central</h3><p class="muted">Produtos independentes dos marketplaces. Novos produtos entram como rascunho.</p></div><button class="primary" id="new-product">＋ Novo produto</button></div><div class="panel table-wrap"><table><thead><tr><th>Produto</th><th>SKU</th><th>Origem</th><th>Preço</th><th>Estoque</th><th>Status</th></tr></thead><tbody id="products-table"></tbody></table><div id="empty-products" class="empty" hidden>Nenhum produto cadastrado. Crie um rascunho para começar.</div></div></section>
+    <section id="view-operations" class="view" hidden><div class="section-head"><div><p class="eyebrow">OBSERVABILIDADE</p><h3>Centro de operações</h3><p class="muted">Somente ações reais iniciadas no aplicativo são registradas.</p></div></div><div class="panel" id="operations-list"></div></section>
+    <section id="view-approvals" class="view" hidden><div class="section-head"><div><p class="eyebrow">CONTROLE HUMANO</p><h3>Aprovações</h3><p class="muted">Ações externas sensíveis permanecem sob autorização explícita.</p></div></div><div class="panel" id="approvals-list"></div></section>
+  </main>
+  <dialog id="product-dialog"><form method="dialog" id="product-form"><div class="dialog-head"><div><p class="eyebrow">CATÁLOGO CENTRAL</p><h3>Novo produto</h3></div><button class="icon-button" value="cancel">×</button></div><label>Nome<input name="name" required placeholder="Nome do produto" /></label><label>SKU<input name="sku" required placeholder="ART-001" /></label><div class="form-row"><label>Preço<input name="price" type="number" step="0.01" placeholder="DADO NÃO DISPONÍVEL" /></label><label>Estoque<input name="stock" type="number" placeholder="DADO NÃO DISPONÍVEL" /></label></div><label>Origem<input name="origin" placeholder="Fornecedor, Radar Global ou DSers" /></label><div class="dialog-actions"><button class="ghost" value="cancel">Cancelar</button><button class="primary" value="default">Criar rascunho</button></div></form></dialog>
+  <script src="/app.js"></script>
+</body>
+</html>
